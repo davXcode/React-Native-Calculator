@@ -32,59 +32,101 @@ export default function App() {
           </Text>
         </View>
         <View style={styles.containerKeys}>
-          <TouchableOpacity onPress={() => setKeys([...keys, '1'])}>
-            <Text style={styles.keysNumber}>1</Text>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '1'])}
+          >
+            <Text style={styles.keysText}>1</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '2'])}>
-            <Text style={styles.keysNumber}>2</Text>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '2'])}
+          >
+            <Text style={styles.keysText}>2</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '-'])}>
-            <Text style={styles.keysOp}>-</Text>
+          <TouchableOpacity
+            style={styles.keysOp}
+            onPress={() => setKeys([...keys, '-'])}
+          >
+            <Text style={styles.keysText}>-</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '+'])}>
-            <Text style={styles.keysOp}>+</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.containerKeys}>
-          <TouchableOpacity onPress={() => setKeys([...keys, '3'])}>
-            <Text style={styles.keysNumber}>3</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '4'])}>
-            <Text style={styles.keysNumber}>4</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '/'])}>
-            <Text style={styles.keysOp}>/</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '*'])}>
-            <Text style={styles.keysOp}>*</Text>
+          <TouchableOpacity
+            style={styles.keysOp}
+            onPress={() => setKeys([...keys, '+'])}
+          >
+            <Text style={styles.keysText}>+</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.containerKeys}>
-          <TouchableOpacity onPress={() => setKeys([...keys, '5'])}>
-            <Text style={styles.keysNumber}>5</Text>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '3'])}
+          >
+            <Text style={styles.keysText}>3</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '6'])}>
-            <Text style={styles.keysNumber}>6</Text>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '4'])}
+          >
+            <Text style={styles.keysText}>4</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => percentHandler()}>
-            <Text style={styles.keysOp}>%</Text>
+          <TouchableOpacity
+            style={styles.keysOp}
+            onPress={() => setKeys([...keys, '/'])}
+          >
+            <Text style={styles.keysText}>/</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => getResult()}>
-            <Text style={styles.keysOp}>=</Text>
+          <TouchableOpacity
+            style={styles.keysOp}
+            onPress={() => setKeys([...keys, '*'])}
+          >
+            <Text style={styles.keysText}>*</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.containerKeys}>
-          <TouchableOpacity onPress={() => setKeys([...keys, '7'])}>
-            <Text style={styles.keysNumber}>7</Text>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '5'])}
+          >
+            <Text style={styles.keysText}>5</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '8'])}>
-            <Text style={styles.keysNumber}>8</Text>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '6'])}
+          >
+            <Text style={styles.keysText}>6</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setKeys([...keys, '9'])}>
-            <Text style={styles.keysNumber}>9</Text>
+          <TouchableOpacity
+            style={styles.keysOp}
+            onPress={() => percentHandler()}
+          >
+            <Text style={styles.keysText}>%</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.keysNumber}>0</Text>
+          <TouchableOpacity style={styles.keysOp} onPress={() => getResult()}>
+            <Text style={styles.keysText}>=</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.containerKeys}>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '7'])}
+          >
+            <Text style={styles.keysText}>7</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '8'])}
+          >
+            <Text style={styles.keysText}>8</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '9'])}
+          >
+            <Text style={styles.keysText}>9</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.keysNumber}>
+            <Text style={styles.keysText}>0</Text>
           </TouchableOpacity>
         </View>
         <View>
@@ -119,7 +161,7 @@ const styles = StyleSheet.create({
     width: 350,
     height: 90,
     marginBottom: 10,
-    borderRadius: 10,
+    borderRadius: 30,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     padding: 7,
@@ -139,8 +181,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: 'white',
     fontSize: 50,
-    borderRadius: 0,
+    borderRadius: 30,
     margin: 5,
+  },
+  keysText: {
+    fontSize: 50,
+    color: 'white',
+    textAlign: 'center',
   },
   keysOp: {
     display: 'flex',
@@ -151,7 +198,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: 'white',
     fontSize: 50,
-    borderRadius: 10,
+    borderRadius: 30,
     margin: 5,
   },
   output: {
