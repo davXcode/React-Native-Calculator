@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Header from './src/components/Header';
 
 export default function App() {
   const [keys, setKeys] = useState([]);
@@ -18,12 +19,13 @@ export default function App() {
 
   function percentHandler() {
     let a = parseFloat(...keys);
-    let resPer = a / 100;
-    setKeys([resPer]);
+    let percent = a / 100;
+    setKeys([percent]);
   }
 
   return (
     <View style={styles.container}>
+      <Header title="Sic Mundus Creatus Est - davXcode" />
       <StatusBar />
       <View style={styles.container}>
         <View style={styles.output}>
@@ -125,7 +127,10 @@ export default function App() {
           >
             <Text style={styles.keysText}>9</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.keysNumber}>
+          <TouchableOpacity
+            style={styles.keysNumber}
+            onPress={() => setKeys([...keys, '0'])}
+          >
             <Text style={styles.keysText}>0</Text>
           </TouchableOpacity>
         </View>
